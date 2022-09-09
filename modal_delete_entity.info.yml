@@ -1,0 +1,6 @@
+name: Modal delete entity views
+type: module
+description: Modal delete entity at views
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,25 @@
+<?php
+
+use Drupal\modal_delete_entity\Plugin\views\field\EntityDeleteLinkModal;
+use Drupal\modal_delete_entity\Plugin\views\field\EntityLinkModal;
+
+/**
+ * @file
+ * Primary module hooks for modal_delete_entity module.
+ */
+
+///**
+// * Implements hook_views_plugins_field_alter().
+// */
+//function modal_delete_entity_views_plugins_field_alter(array &$plugins) {
+//  $plugins;
+//}
+
+
+/**
+ * Implements hook_views_plugins_field_alter().
+ */
+function modal_delete_entity_views_plugins_field_alter(array &$plugins) {
+$plugins['entity_link_delete']['class'] = EntityDeleteLinkModal::class;
+$plugins['entity_link']['class'] = EntityLinkModal::class;
+}
