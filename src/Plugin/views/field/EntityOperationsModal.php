@@ -9,7 +9,7 @@ use Drupal\views\Plugin\views\field\EntityLink;
 /**
  * Field handler to present a link to an entity.
  */
-class EntityLinkModal extends EntityLink {
+class EntityOperationsModal extends EntityLink {
 
   /**
    * {@inheritdoc}
@@ -72,11 +72,12 @@ class EntityLinkModal extends EntityLink {
    */
   public function buildOptionsForm(&$form, FormStateInterface $form_state) {
     parent::buildOptionsForm($form, $form_state);
-    $form['absolute'] = [
+    $form['in_modal'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Use absolute link (begins with "https://")'),
-      '#default_value' => $this->options['absolute'],
-      '#description' => $this->t('Enable this option to output an absolute link. Required if you want to use the path as a link destination.'),
+      '#title' => $this->t('Open in modal'),
+      '#default_value' => $this->options['in_modal'],
+      '#description' => $this
+        ->t('Enable this option to open modal window when click.'),
     ];
 
   }

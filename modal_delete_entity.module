@@ -1,7 +1,8 @@
 <?php
 
-use Drupal\modal_delete_entity\Plugin\views\field\EntityDeleteLinkModal;
-use Drupal\modal_delete_entity\Plugin\views\field\EntityLinkModal;
+use Drupal\modal_delete_entity\Plugin\views\field\EntityDeleteModal;
+use Drupal\modal_delete_entity\Plugin\views\field\EntityOperationsModal;
+use Drupal\views\ViewExecutable;
 
 /**
  * @file
@@ -20,6 +21,10 @@ use Drupal\modal_delete_entity\Plugin\views\field\EntityLinkModal;
  * Implements hook_views_plugins_field_alter().
  */
 function modal_delete_entity_views_plugins_field_alter(array &$plugins) {
-$plugins['entity_link_delete']['class'] = EntityDeleteLinkModal::class;
-$plugins['entity_link']['class'] = EntityLinkModal::class;
+  $plugins['entity_link_delete']['class'] = EntityDeleteModal::class;
+  $plugins['entity_operations']['class'] = EntityOperationsModal::class;
+}
+
+function modal_delete_entity_preprocess_views_view_field(&$variables) {
+
 }
